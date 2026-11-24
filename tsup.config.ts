@@ -27,6 +27,7 @@ export default defineConfig([
     },
     clean: false,
     dts: false,
+    splitting: true,
     entry: {
       cli: "src/cli.ts",
     },

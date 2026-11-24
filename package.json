@@ -35,6 +35,7 @@
     "generate": "bun run src/cli.ts generate",
     "prepare": "tsup",
     "start": "bun run src/cli.ts start",
+    "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

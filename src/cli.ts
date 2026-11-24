@@ -2,7 +2,6 @@ import path from "node:path";
 import { buildPythonCircuit } from "./lib/build-python-circuit";
 import { buildTsxArtifacts } from "./lib/build-tsx-artifacts";
 import { generatePythonLibrary } from "./lib/generate-python-library";
-import { startPythonDevServer } from "./lib/start-python-dev-server";
 
 const printUsage = () => {
   console.log(`Usage:
@@ -226,6 +225,9 @@ async function main() {
 
   if (command === "start") {
     const { port, targetPath } = parseStartArgs(args);
+    const { startPythonDevServer } = await import(
+      "./lib/start-python-dev-server"
+    );
     const devServer = await startPythonDevServer({
       inputPath: targetPath,
       port,
